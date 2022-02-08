@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/actions/todosActions";
 
-const AddTodoForm = ({ addTodo }) => {
+const AddTodoForm = () => {
   const [todoText, setTodoText] = useState("");
+  const dispatch = useDispatch();
 
   function randomId() {
     const uint32 = window.crypto.getRandomValues(new Uint32Array(1))[0];
@@ -14,7 +17,8 @@ const AddTodoForm = ({ addTodo }) => {
       todo: todoText,
       complete: false
     };
-    addTodo(todo);
+    dispatch(addTodo(todo))
+    
     setTodoText("")
   };
   

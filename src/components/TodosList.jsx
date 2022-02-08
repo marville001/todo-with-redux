@@ -1,9 +1,15 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteTodo, changeTodoStatus } from "../redux/actions/todosActions";
 
-const TodosList = ({ todos, completeTodo, deleteTodo }) => {
+const TodosList = () => {
+
+  const {todos} = useSelector(state=>state.todosState)
+  const dispatch = useDispatch();
+  
   const handleCheck = (e, todo) => {
     todo.complete = e.target.checked;
-    completeTodo(todo);
+    dispatch(changeTodoStatus(todo));
   };
 
   if(todos.length === 0 ){
@@ -34,7 +40,7 @@ const TodosList = ({ todos, completeTodo, deleteTodo }) => {
           </div>
           <div className="">
             <button
-              onClick={(e) => deleteTodo(todo.id)}
+              onClick={(e) => dispatch(deleteTodo(todo.id))}
               className="btn btn-danger"
             >
               Delete

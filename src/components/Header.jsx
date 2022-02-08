@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const Header = ({todos}) => {
+const Header = () => {
+  const {todos} = useSelector(state=>state.todosState)
   return (
     <div className="bg-dark p-4">
       <div className="content d-flex align-items-center justify-content-between">
