@@ -43,7 +43,7 @@ const TodosList = ({ todos, completeTodo, deleteTodo }) => {
         </div>
       ))}
 
-      <h3 className="my-4 px-2">{todos.filter(todo=>todo.complete === true).length} complete items</h3>
+      <h3 className="my-4 px-2">Total complete items {todos.filter(todo=>todo.complete === true).length} </h3>
     </div>
   );
 };

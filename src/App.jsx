@@ -4,10 +4,7 @@ import Header from "./components/Header";
 import TodosList from "./components/TodosList";
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    { id: "sdsdfs", todo: "Go to the gym", complete: false },
-    { id: "erer", todo: "Ride my bicycle", complete: false },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
@@ -21,7 +18,6 @@ const App = () => {
       if (todo.id === id) {
         todo.complete = complete;
       }
-
       return todo;
     });
 
@@ -29,8 +25,6 @@ const App = () => {
   };
 
   const deleteTodo = (id)=>{
-    //   const remTodos = todos.filter(todo=>todo.id !== id)
-    //   console.log({remTodos});
       setTodos(todos.filter(todo=>todo.id !== id))
   }
 
