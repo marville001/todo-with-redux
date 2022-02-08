@@ -6,6 +6,12 @@ const TodosList = ({ todos, completeTodo, deleteTodo }) => {
     completeTodo(todo);
   };
 
+  if(todos.length === 0 ){
+    return <div className="border p-2 my-3 py-3 d-flex justify-content-center rounded">
+      <h4>No Todos Added</h4>
+    </div>
+  }
+
   return (
     <div className="border p-2 my-3 rounded">
       {todos.map((todo, idx) => (
