@@ -1,15 +1,13 @@
+
 import {createStore, combineReducers} from 'redux'
-import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
+import productsReducer from './reducers/productsReducer'
 
-
-import todosReducer from './reducers/todosReducer'
-import usersReducer from './reducers/usersReducer';
-
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 const rootReducer = combineReducers({
-    todosState: todosReducer,
-    usersState: usersReducer
+    productsState: productsReducer
 })
+
 
 const store = createStore(rootReducer, composeWithDevTools())
 
