@@ -1,0 +1,6 @@
+
+export const GET_TODOS = {
+    REQUEST: "GET_TODOS_REQUEST",
+    SUCCESS: "GET_TODOS_SUCCESS",
+    FAIL: "GET_TODOS_FAIL",
+}
